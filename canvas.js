@@ -13,33 +13,33 @@ function gerar_cor_hexadecimal() {
         .padStart(3, '0');
 }
 
-/*
+
 //Desafio 1 
 for (var i = 0; i < 10; i++) {
 
     auxX = x + auxX; //Reposiciona em X
     auxY = y + auxY;
     //Quadrado
-    c.fillStyle = 'rgba(0, 255, 0, 0.5)'; //Escolhe a cor
-    c.fillRect(auxX, auxY, 25, 25); //Posiciona em X, Y e depois o tamanho
+    ctx.fillStyle = 'rgba(0, 255, 0, 0.5)'; //Escolhe a cor
+    ctx.fillRect(auxX, auxY, 25, 25); //Posiciona em X, Y e depois o tamanho
 
     //Linha
-    c.beginPath(); //Iní­cio do comando
-    c.moveTo(auxX,y); //InÃ­cio da linha
-    c.lineTo(x, auxY); //Final da linha
-    c.strokeStyle = "purple"; //Definição da cor
-    c.stroke(); //Executa o desenho
+    ctx.beginPath(); //Iní­cio do comando
+    ctx.moveTo(auxX,y); //InÃ­cio da linha
+    ctx.lineTo(x, auxY); //Final da linha
+    ctx.strokeStyle = "purple"; //Definição da cor
+    ctx.stroke(); //Executa o desenho
 
     //CÃ­rculo
-    c.beginPath();
-    c.arc(auxX, auxY, 20, 0, Math.PI* 2, false);
-    c.strokeStyle = "red";
-    c.stroke();
+    ctx.beginPath();
+    ctx.arc(auxX, auxY, 20, 0, Math.PI* 2, false);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
 
 }
-*/
 
-/*
+
+
 //Desafio 2
 for (var i = 0; i < 10; i++) {
 
@@ -47,25 +47,25 @@ for (var i = 0; i < 10; i++) {
     auxY = Math.random()*150 + Math.random()*300; //Reposiciona em Y
 
     //Quadrado
-    c.fillStyle = "blue"; //Escolhe a cor
-    c.fillRect(auxX, auxY, 25, 25); //Posiciona em X, Y e depois o tamanho
+    ctx.fillStyle = "blue"; //Escolhe a cor
+    ctx.fillRect(auxX, auxY, 25, 25); //Posiciona em X, Y e depois o tamanho
 
     //Linha
-    c.beginPath(); //Início do comando
-    c.moveTo(auxX-Math.random()*50, x+auxX); //InÃ­cio da linha
-    c.lineTo(auxX-Math.random()*50, y+auxY); //Final da linha
-    c.strokeStyle = "purple"; //DefiniÃ§Ã£o da cor
-    c.stroke(); //Executa o desenho
+    ctx.beginPath(); //Início do comando
+    ctx.moveTo(auxX-Math.random()*50, x+auxX); //InÃ­cio da linha
+    ctx.lineTo(auxX-Math.random()*50, y+auxY); //Final da linha
+    ctx.strokeStyle = "purple"; //DefiniÃ§Ã£o da cor
+    ctx.stroke(); //Executa o desenho
 
     //CÃ­rculo
-    c.beginPath();
-    c.arc(auxX, auxY*Math.random()*15, 20, 0, Math.PI * 2, false);
-    c.strokeStyle = "red";
-    c.stroke();
+    ctx.beginPath();
+    ctx.arc(auxX, auxY*Math.random()*15, 20, 0, Math.PI * 2, false);
+    ctx.strokeStyle = "red";
+    ctx.stroke();
 }
-*/
 
-/*
+
+
 //Desafio 3
 for (var i = 0; i < 10; i++) {
 
@@ -73,35 +73,54 @@ for (var i = 0; i < 10; i++) {
     auxY = Math.random() * 150 + Math.random() * 300; //Reposiciona em Y
 
     //Quadrado
-    c.fillStyle = gerar_cor_hexadecimal(); //Escolhe a cor
-    c.fillRect(auxX, auxY, 25, 25); //Posiciona em X, Y e depois o tamanho
+    ctx.fillStyle = gerar_cor_hexadecimal(); //Escolhe a cor
+    ctx.fillRect(auxX, auxY, 25, 25); //Posiciona em X, Y e depois o tamanho
 
     //Linha
-    c.beginPath(); //InÃ­cio do comando
-    c.moveTo(auxX-Math.random() * 50, x + auxX); //InÃ­cio da linha
-    c.lineTo(auxX - Math.random() * 50, y + auxY); //Final da linha
-    c.strokeStyle = gerar_cor_hexadecimal(); //DefiniÃ§Ã£o da cor
-    c.stroke(); //Executa o desenho
+    ctx.beginPath(); //InÃ­cio do comando
+    ctx.moveTo(auxX-Math.random() * 50, x + auxX); //InÃ­cio da linha
+    ctx.lineTo(auxX - Math.random() * 50, y + auxY); //Final da linha
+    ctx.strokeStyle = gerar_cor_hexadecimal(); //DefiniÃ§Ã£o da cor
+    ctx.stroke(); //Executa o desenho
 
     //CÃ­rculo
-    c.beginPath();
-    c.arc(auxX, auxY * Math.random() * 5, 20, 0, Math.PI * 2, false);
-    c.strokeStyle = gerar_cor_hexadecimal();
-    c.stroke();
+    ctx.beginPath();
+    ctx.arc(auxX, auxY * Math.random() * 5, 20, 0, Math.PI * 2, false);
+    ctx.strokeStyle = gerar_cor_hexadecimal();
+    ctx.stroke();
 }
-*/
 
 
-/*
+
+
 //Desafio 4
 //CÃ­rculo
-c.beginPath();
-c.arc(x, y, Math.random()*20, 0, Math.PI * 2, false);
-c.strokeStyle = "blue";
-c.stroke();
-*/
+ctx.beginPath();
+ctx.arc(x, y, Math.random()*20, 0, Math.PI * 2, false);
+ctx.strokeStyle = "blue";
+ctx.stroke();
+
+ // ESTRELA
+
+ ctx.fillStyle = gerar_cor_hexadecimal();
+ ctx.beginPath();
+ ctx.moveTo(108,0.0);
+ ctx.lineTo(141, 70);
+ ctx.lineTo(218, 78.3);
+ ctx.lineTo(162, 131);
+ ctx.lineTo(175, 205);
+ ctx.lineTo(108, 170);
+ ctx.lineTo(41.2, 205);
+ ctx.lineTo(55, 131);
+ ctx.lineTo(1, 78);
+ ctx.lineTo(75, 68);
+ ctx.lineTo(108, 0);
+ ctx.closePath();
+ ctx.fill();
+
 
      //CORAÇÃO
+      ctx.fillStyle = gerar_cor_hexadecimal();
       ctx.beginPath();
       ctx.moveTo(75,40);
       ctx.bezierCurveTo(75,37,70,25,50,25);
@@ -112,7 +131,8 @@ c.stroke();
       ctx.bezierCurveTo(85,25,75,37,75,40);
       ctx.fill();
     
-    // BATIMÃO
+    // SÍMBOLO DO BATMAN
+    
     ctx.transform( 1 , 0 , 0 , -1 , canvas.width * 0.5 , canvas.height * 0.5 ); // more info at https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/transform
 ctx.save( ); // stores canvas state - importantly it saves the direction of y-axis increasing
 
@@ -134,7 +154,7 @@ ctx.scale( 1, -1 ); // makes y-axis increasing downwards so text can be written 
 ctx.font = '15px Arial';
 var authorName = '@fabiohenriquefh';
 var authorNameMeasured = ctx.measureText( authorName );
-ctx.fillStyle = '#10C4C4'; // design by day green
+ctx.fillStyle = gerar_cor_hexadecimal(); // design by day green
 ctx.textBaseline = 'bottom'; // allows to be manpulated from bottom-left
 ctx.fillText( authorName, ( authorNameMeasured.width * -0.5 ), ( canvas.height * 0.5 - 25 ) ); // positions author attribute
 ctx.restore( ); // makes y-axis increasing upwards again
@@ -318,4 +338,3 @@ function drawBatLogo( curveArray ) {
 };
 
 drawBatLogo( [curve_1, curve_2, curve_3, curve_4, curve_5, curve_6, curve_7, curve_8, curve_9, curve_10, curve_11, curve_12] );
-  
