@@ -2,11 +2,59 @@ var canvas = document.querySelector('canvas');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var ctx = canvas.getContext('2d');
-var x = 50;
+var x = 200;
 var y = 100;
-var auxX = 0;
-var auxY = 0;
+var auxX = 50;
+var auxY = 25;
 
+
+function animateX(){
+  requestAnimationFrame(animateX);
+
+  ctx.clearRect(0,0,innerWidth, innerHeight);
+  
+  ctx.fillStyle = 'rgba(0,255,0,0.5)';
+  ctx.fillRect(x, 200, 200, 200);
+
+  if(( x + 200) > innerWidth) {
+   auxX = -auxX
+  }
+  else if (x<0){
+auxX = -auxX
+  }
+   x=x+auxX;
+}
+
+function animateY(){
+  requestAnimationFrame(animateY);
+
+  ctx.clearRect(0,0,innerWidth, innerHeight);
+  
+  ctx.fillStyle = 'rgba(0,255,0,0.5)';
+  ctx.fillRect(200, y, 200, 200);
+
+  if(( y + 200) > innerHeight) {
+   auxY = -auxY
+  }
+  else if (y<0){
+auxY = -auxY
+  }
+   y=y+auxY;
+}
+
+
+
+function Pare(){
+  requestAnimationFrame(Pare);
+
+  ctx.clearRect(0,0,innerWidth, innerHeight);
+  
+  ctx.fillStyle = 'rgba(0,255,0,0.5)';
+  ctx.fillRect(200, 200, 200, 200);
+
+}
+
+/*
 function gerar_cor_hexadecimal() {
     return '#' + parseInt((Math.random() * 0xFFF))
         .toString(16)
@@ -15,7 +63,7 @@ function gerar_cor_hexadecimal() {
 
 
 //Desafio 1 
-for (var i = 0; i < 10; i++) {
+ for (var i = 0; i < 10; i++) {
 
     auxX = x + auxX; //Reposiciona em X
     auxY = y + auxY;
@@ -130,17 +178,21 @@ ctx.stroke();
       ctx.bezierCurveTo(130,62.5,130,25,100,25);
       ctx.bezierCurveTo(85,25,75,37,75,40);
       ctx.fill();
+
     
     // SÍMBOLO DO BATMAN
     
     ctx.transform( 1 , 0 , 0 , -1 , canvas.width * 0.5 , canvas.height * 0.5 ); // more info at https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/transform
 ctx.save( ); // stores canvas state - importantly it saves the direction of y-axis increasing
 
-/* mark the origin for reference */
+
+
+
+ 
 ctx.fillStyle = 'red';
 ctx.fillRect( -2 , -2 , 4 , 4 );
 
-/* marks a simple axis */
+
 ctx.beginPath( );
 ctx.moveTo( canvas.width * -0.5, 0 );
 ctx.lineTo( canvas.width * 0.5, 0 );
@@ -149,7 +201,7 @@ ctx.lineTo( 0, canvas.width * 0.5 );
 ctx.strokeStyle = '#F5F5F5';
 ctx.stroke( );
 
-/* draw author watermark text on canvas */
+
 ctx.scale( 1, -1 ); // makes y-axis increasing downwards so text can be written upright
 ctx.font = '15px Arial';
 var authorName = '@fabiohenriquefh';
@@ -159,7 +211,7 @@ ctx.textBaseline = 'bottom'; // allows to be manpulated from bottom-left
 ctx.fillText( authorName, ( authorNameMeasured.width * -0.5 ), ( canvas.height * 0.5 - 25 ) ); // positions author attribute
 ctx.restore( ); // makes y-axis increasing upwards again
 
-/* define the pencil properties */
+
 var pencil = {
   'thickness': 1, // thickness of line
   'color': {
@@ -173,13 +225,13 @@ var pencil = {
   }
 };
 
-/* customise output */
+
 a = 40; // bat-scale (batman logo scale) or known as arbitary constant in mathematics
 
 var graph = {
   'step': 0.5, // decrease step value to get greater points plotted but will cause browser lag due to increase in number of calculations 0.1 gives best result
   plot: function( curveObject ) {
-      /* equation is drawn via an interation method - same concept as plotting known coordinates on a graph */
+      
       ctx.beginPath( );
       ctx.lineWidth = pencil.thickness;
       ctx.strokeStyle = curveObject.pencilColor; // allows stroke to have a custom color
@@ -203,12 +255,11 @@ var graph = {
     };
   },
   clear: function( ) {
-    /* clears the canvas if needed */
+    
       ctx.clearRect( canvas.width * -0.5 , canvas.height * -0.5 , canvas.width , canvas.height );
   }
 };
 
-/* I was thinking about creating new objects to acheive the same result more efficiently and minifying code */
 
 var curve_1 = {
   'inequalityFor': 'y_axis',
@@ -331,10 +382,11 @@ var curve_12 = {
 };
 
 function drawBatLogo( curveArray ) {
-  /* call draw method of graph object to outpout curves on canvas */
+ 
   for( var i = 0; i < curveArray.length; i++ ) {
     graph.plot( curveArray[i] );
   };
 };
 
 drawBatLogo( [curve_1, curve_2, curve_3, curve_4, curve_5, curve_6, curve_7, curve_8, curve_9, curve_10, curve_11, curve_12] );
+ */
